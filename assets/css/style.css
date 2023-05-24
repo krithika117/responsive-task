@@ -34,13 +34,22 @@ h6 {
             #222222 0%,
             #414141 75%,
             #222222 100%);
+    color: white !important;
+}
+
+.blue {
+    background-color: #044c5e !important;
+    color: white !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+    backdrop-filter: blur(5px)!important;
+    -webkit-backdrop-filter: blur(5px)!important;
+    border: 1px solid rgba(255, 255, 255, 0.3)!important;    
 }
 
 .card-img-top {
     height: 7rem;
     object-fit: contain;
 }
-
 
 .black:hover h4 {
     border-radius: inherit;
@@ -121,6 +130,11 @@ h6 {
 .vormir {
     box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #a57ecb;
     background: url(../images/planets/vormir.jpg);
+}
+
+.titan {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #57150a;
+    background: url(../images/planets/titan.jpg);
 }
 
 @keyframes rotate {
