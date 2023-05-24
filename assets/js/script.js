@@ -1,4 +1,5 @@
-const BASE_URL = "https://krithika-marvel-api.vercel.app";
+// const BASE_URL = "https://krithika-marvel-api.vercel.app";
+const BASE_URL = "http://127.0.0.1:3000";
 const dropdown = document.getElementById('planet-dropdown');
 const planetNameElement = document.getElementById('planet-name');
 const planetInfoElement = document.getElementById('planet-info');

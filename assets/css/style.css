@@ -40,10 +40,10 @@ h6 {
 .blue {
     background-color: #044c5e !important;
     color: white !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
-    backdrop-filter: blur(5px)!important;
-    -webkit-backdrop-filter: blur(5px)!important;
-    border: 1px solid rgba(255, 255, 255, 0.3)!important;    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 .card-img-top {
@@ -116,15 +116,30 @@ h6 {
     width: 20em;
     height: 20em;
     position: relative;
-    animation: rotate 10s linear infinite;
+    animation: rotate 30s linear infinite;
     border-radius: 50%;
     background-repeat: repeat;
     background-size: 200% 100%;
 }
 
-.venus {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #f0d08b;
-    background: url(../images/planets/venus.jpg);
+.nowhere {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #105502;
+    background: url(../images/planets/nowhere.jpg);
+}
+
+.xandar {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #7b9a7b;
+    background: url(../images/planets/xandar.jpg);
+}
+
+.asgard {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #5b80a0;
+    background: url(../images/planets/asgard.jpg);
+}
+
+.midgard {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #114189;
+    background: url(../images/planets/earth2.webp);
 }
 
 .vormir {
@@ -137,25 +152,36 @@ h6 {
     background: url(../images/planets/titan.jpg);
 }
 
+.morag {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #0a2557;
+    background: url(../images/planets/morag.jpg);
+}
+
+.nidavellir {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #572d0a;
+    background: url(../images/planets/nidavellir.jpg);
+}
+
 @keyframes rotate {
     to {
-        background-position: -200% 0;
+        background-position: -206% 0;
     }
 }
 
 @keyframes blink {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     50% {
-      opacity: 0;
+        opacity: 0;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .blinking {
+}
+
+.blinking {
     animation: blink 1s infinite;
-  }
-  
+}
