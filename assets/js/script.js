@@ -31,9 +31,40 @@ async function displayPlanetInfo(selectedPlanet) {
     try {
         const response = await fetch(`${BASE_URL}/planets/${selectedPlanet}`);
         const data = await response.json();
+
         planetContainer.className = 'planet ' + selectedPlanet.toLowerCase();
         planetNameElement.textContent = data.stone ? `${selectedPlanet} ${data.stone}` : selectedPlanet;
-        planetInfoElement.textContent = data.info ? data.info : '';
+
+        let info = '';
+        if (data.stone) {
+            info = `Stone: ${data.stone}`;
+            if (data.distance) {
+                info += ` Distance: ${data.distance} miles away`;
+            }
+        }
+        if (!info) {
+            info = 'No additional information available.';
+        }
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body p-3';
+        const cardTitle = document.createElement('h5');
+        cardTitle.className = 'card-title';
+        cardTitle.textContent = selectedPlanet;
+        const cardText = document.createElement('p');
+        cardText.className = 'card-text';
+        cardText.textContent = info;
+
+        const card = document.createElement('div');
+        card.className = 'card blue';
+        card.appendChild(cardBody);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+
+        const cardContainer = document.querySelector('#planet-info');
+        cardContainer.innerHTML = '';
+        cardContainer.appendChild(card);
+
     } catch (error) {
         console.log('Error:', error);
     }
