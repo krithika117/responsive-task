@@ -42,7 +42,7 @@ async function displayPlanetInfo(selectedPlanet) {
             if (data.distance) {
                 info += ` and Thanos is ${data.distance} ⚠️`;
             } else {
-                info += ` and Thanos is not a threat`;
+                info += ` but Thanos is not a threat`;
             }
         } else {
             info = 'No additional information available.';
@@ -57,21 +57,57 @@ async function displayPlanetInfo(selectedPlanet) {
         cardText.className = 'card-text';
         cardText.textContent = info;
 
-        if (data.distance) {
-            cardText.classList.add('blinking');
-        }
-
         const card = document.createElement('div');
         card.className = 'card blue';
         card.appendChild(cardBody);
+
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
 
         const cardContainer = document.querySelector('#planet-info');
         cardContainer.innerHTML = '';
+        if (data.distance) {
+            cardText.classList.add('blinking');
+            const notifyButton = document.createElement('button');
+            notifyButton.textContent = 'Notify Troop';
+            notifyButton.className = "btn btn-secondary bg-danger";
+            notifyButton.addEventListener('click', () => {
+                sendEmail(selectedPlanet, data);
+            });
+
+            cardBody.append(notifyButton);
+        }
         cardContainer.appendChild(card);
 
     } catch (error) {
         console.log('Error:', error);
     }
+}
+
+// Incomplete send email function
+async function sendEmail(selectedPlanet, data) {
+    (function () {
+        emailjs.init('tqAWXJdq654vqEETQ');
+    })();
+
+    const templateParams = {
+        to_name: "krithika.23it@licet.ac.in",
+        planet: selectedPlanet,
+        stone: data.stone,
+    };
+
+    const notifyButton = document.querySelector('.btn.bg-danger');
+    notifyButton.textContent = 'Deployed Forces';
+    notifyButton.className = 'btn bg-success'
+    notifyButton.disabled = true;
+
+    emailjs.send("service_rmkmuho", "template_bfhxk6t", templateParams, "tqAWXJdq654vqEETQ")
+        .then(function (response) {
+            console.log('Email sent:', response.status, response.text);
+        }, function (error) {
+            console.log('Error:', error);
+            // In case of error, reset the button text and enable it again
+            notifyButton.textContent = 'Notify Troop';
+            notifyButton.disabled = false;
+        });
 }
