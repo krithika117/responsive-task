@@ -19,7 +19,7 @@ h6 {
     /* font-family: 'Megrim', sans-serif !important; */
     font-family: 'Jura', sans-serif !important;
     text-transform: uppercase;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff ;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 
 .navbar {
@@ -51,6 +51,8 @@ h6 {
     object-fit: contain;
     animation: 1.5s infinite floater;
 }
+
+
 
 .black:hover h4 {
     border-radius: inherit;
@@ -205,4 +207,8 @@ h6 {
 
 .blinking {
     animation: blink 1s infinite;
+}
+
+.image {
+    width: 90%;
 }
