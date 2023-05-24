@@ -113,7 +113,7 @@ if (window.location.pathname == "/universe.html") {
 }
 if (window.location.pathname == "/team.html") {
     const apiURL =
-        'https://gateway.marvel.com/v1/public/characters?ts=1&apikey=2c764864c5c72c7f6bf98584d2969e45&hash=91d69e2b93b176b0c9fb00841c1f805b';
+        `https://gateway.marvel.com/v1/public/characters?${process.env.API_HASH}`;
     const characterContainer = document.getElementById('character-container');
 
     fetch(apiURL)
