@@ -4,8 +4,11 @@
 
 body {
     font-family: 'Nunito', sans-serif !important;
-    background: radial-gradient(circle at right center, rgb(0, 0, 0), rgb(45, 45, 45), rgb(0, 0, 0));
+    /* background: radial-gradient(circle at right center, rgb(0, 0, 0), rgb(45, 45, 45), rgb(0, 0, 0)); */
+    background-color: #000000;
+    background: #000 url(../images/stars.png) repeat top center !important;
 }
+
 
 h1,
 h2,
@@ -67,4 +70,61 @@ h6 {
     transform: translate(-50%, -50%);
     color: #fff;
     z-index: 2;
+}
+
+/* Star Styles */
+@keyframes move-twinkle-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -1000px 5000px;
+    }
+}
+
+.stars,
+.twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.twinkling {
+    background: transparent url(../images/twinkling.png) repeat top center;
+    animation: move-twinkle-back 100s linear infinite;
+    height: 100%;
+    z-index: -1;
+}
+
+.planet {
+    border: none;
+    width: 20em;
+    height: 20em;
+    position: relative;
+    animation: rotate 10s linear infinite;
+    border-radius: 50%;
+    background-repeat: repeat;
+    background-size: 200% 100%;
+}
+
+.venus {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #f0d08b;
+    background: url(../images/planets/venus.jpg);
+}
+
+.vormir {
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #a57ecb;
+    background: url(../images/planets/vormir.jpg);
+}
+
+@keyframes rotate {
+    to {
+        background-position: -200% 0;
+    }
 }
