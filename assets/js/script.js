@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 if (window.location.pathname == "/universe.html") {
     const BASE_URL = "https://krithika-marvel-api.vercel.app";
     // const BASE_URL = "http://127.0.0.1:3000";
@@ -87,7 +89,7 @@ if (window.location.pathname == "/universe.html") {
 
     async function sendEmail(selectedPlanet, data) {
         (function () {
-            emailjs.init('tqAWXJdq654vqEETQ');
+            emailjs.init(process.env.EMAIL_JS_KEY);
         })();
 
         const templateParams = {
@@ -101,7 +103,7 @@ if (window.location.pathname == "/universe.html") {
         notifyButton.className = 'btn bg-success'
         notifyButton.disabled = true;
 
-        emailjs.send("service_rmkmuho", "template_bfhxk6t", templateParams, "tqAWXJdq654vqEETQ")
+        emailjs.send("service_rmkmuho", "template_bfhxk6t", templateParams, process.env.EMAIL_JS_KEY)
             .then(function (response) {
                 console.log('Email sent:', response.status, response.text);
             }, function (error) {
