@@ -37,12 +37,13 @@ async function displayPlanetInfo(selectedPlanet) {
 
         let info = '';
         if (data.stone) {
-            info = `Stone: ${data.stone}`;
+            info = `${data.stone}`;
             if (data.distance) {
-                info += ` Distance: ${data.distance} miles away`;
+                info += ` and Thanos is ${data.distance} ⚠️`;
+            } else {
+                info += `and Thanos is not a threat`;
             }
-        }
-        if (!info) {
+        } else {
             info = 'No additional information available.';
         }
 
