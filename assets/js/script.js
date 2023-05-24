@@ -1,7 +1,8 @@
-require("dotenv").config()
+const BASE_URL = "https://krithika-marvel-api.vercel.app";
+const API_HASH = "ts=1&apikey=2c764864c5c72c7f6bf98584d2969e45&hash=91d69e2b93b176b0c9fb00841c1f805b";
+const EMAIL_JS_KEY = "tqAWXJdq654vqEETQ";
 
 if (window.location.pathname == "/universe.html") {
-    const BASE_URL = "https://krithika-marvel-api.vercel.app";
     // const BASE_URL = "http://127.0.0.1:3000";
     const dropdown = document.getElementById('planet-dropdown');
     const planetNameElement = document.getElementById('planet-name');
@@ -89,7 +90,7 @@ if (window.location.pathname == "/universe.html") {
 
     async function sendEmail(selectedPlanet, data) {
         (function () {
-            emailjs.init(process.env.EMAIL_JS_KEY);
+            emailjs.init(EMAIL_JS_KEY);
         })();
 
         const templateParams = {
@@ -103,7 +104,7 @@ if (window.location.pathname == "/universe.html") {
         notifyButton.className = 'btn bg-success'
         notifyButton.disabled = true;
 
-        emailjs.send("service_rmkmuho", "template_bfhxk6t", templateParams, process.env.EMAIL_JS_KEY)
+        emailjs.send("service_rmkmuho", "template_bfhxk6t", templateParams, EMAIL_JS_KEY)
             .then(function (response) {
                 console.log('Email sent:', response.status, response.text);
             }, function (error) {
@@ -115,7 +116,7 @@ if (window.location.pathname == "/universe.html") {
 }
 if (window.location.pathname == "/team.html") {
     const apiURL =
-        `https://gateway.marvel.com/v1/public/characters?${process.env.API_HASH}`;
+        `https://gateway.marvel.com/v1/public/characters?${API_HASH}`;
     const characterContainer = document.getElementById('character-container');
 
     fetch(apiURL)
@@ -128,28 +129,28 @@ if (window.location.pathname == "/team.html") {
 
                 const card = document.createElement('div');
                 card.className = 'card blue d-flex col-sm-3 ms-auto';
-                
+
                 const imageContainer = document.createElement('div');
                 imageContainer.className = 'image-container';
-                
+
                 const image = document.createElement('img');
                 image.src = imageUrl;
                 image.alt = name;
                 image.className = 'image border-2';
-                
+
                 const cardBody = document.createElement('div');
                 cardBody.className = 'card-body ms-auto';
-                
+
                 const cardTitle = document.createElement('h5');
                 cardTitle.className = 'card-title';
                 cardTitle.textContent = name;
-                
+
                 imageContainer.appendChild(image);
                 cardBody.appendChild(cardTitle);
-                
+
                 card.appendChild(imageContainer);
                 card.appendChild(cardBody);
-                
+
                 characterContainer.appendChild(card);
             });
         })
