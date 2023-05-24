@@ -9,6 +9,10 @@ body {
     background: #000 url(../images/stars.png) repeat top center !important;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 #avengers-logo {
     z-index: 0;
     border-radius: 50%;
@@ -215,4 +219,36 @@ h6 {
 
 .image {
     width: 90%;
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInFromLeft 0.7s ease-in forwards;
+}
+
+.separate-fade {
+    opacity: 0;
+    animation: separateFade 3s ease-in forwards;
+}
+
+@keyframes separateFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

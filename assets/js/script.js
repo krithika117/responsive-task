@@ -70,7 +70,7 @@ if (window.location.pathname == "/universe.html") {
             if (data.distance) {
                 cardText.classList.add('blinking');
                 const notifyButton = document.createElement('button');
-                notifyButton.textContent = 'Notify Troop';
+                notifyButton.textContent = 'Notify Forces';
                 notifyButton.className = "btn btn-secondary bg-danger";
                 notifyButton.addEventListener('click', () => {
                     sendEmail(selectedPlanet, data);
@@ -85,7 +85,6 @@ if (window.location.pathname == "/universe.html") {
         }
     }
 
-    // Incomplete send email function
     async function sendEmail(selectedPlanet, data) {
         (function () {
             emailjs.init('tqAWXJdq654vqEETQ');
@@ -107,8 +106,7 @@ if (window.location.pathname == "/universe.html") {
                 console.log('Email sent:', response.status, response.text);
             }, function (error) {
                 console.log('Error:', error);
-                // In case of error, reset the button text and enable it again
-                notifyButton.textContent = 'Notify Troop';
+                notifyButton.textContent = 'Notify Forces';
                 notifyButton.disabled = false;
             });
     }
@@ -127,15 +125,15 @@ if (window.location.pathname == "/team.html") {
                 const imageUrl = `${character.thumbnail.path}.${character.thumbnail.extension}`;
 
                 const card = document.createElement('div');
-                card.className = 'card blue d-flex';
+                card.className = 'card blue d-flex col-sm-3 ms-auto';
                 
                 const imageContainer = document.createElement('div');
-                imageContainer.className = 'image-container align-self-start';
+                imageContainer.className = 'image-container';
                 
                 const image = document.createElement('img');
                 image.src = imageUrl;
                 image.alt = name;
-                image.className = 'image';
+                image.className = 'image border-2';
                 
                 const cardBody = document.createElement('div');
                 cardBody.className = 'card-body ms-auto';
@@ -144,16 +142,12 @@ if (window.location.pathname == "/team.html") {
                 cardTitle.className = 'card-title';
                 cardTitle.textContent = name;
                 
-                // Add elements to card
                 imageContainer.appendChild(image);
                 cardBody.appendChild(cardTitle);
                 
                 card.appendChild(imageContainer);
                 card.appendChild(cardBody);
                 
-
-
-                // Add card to container
                 characterContainer.appendChild(card);
             });
         })
