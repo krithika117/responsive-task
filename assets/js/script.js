@@ -41,7 +41,7 @@ async function displayPlanetInfo(selectedPlanet) {
             if (data.distance) {
                 info += ` and Thanos is ${data.distance} ⚠️`;
             } else {
-                info += `and Thanos is not a threat`;
+                info += ` and Thanos is not a threat`;
             }
         } else {
             info = 'No additional information available.';
@@ -55,6 +55,10 @@ async function displayPlanetInfo(selectedPlanet) {
         const cardText = document.createElement('p');
         cardText.className = 'card-text';
         cardText.textContent = info;
+
+        if (data.distance) {
+            cardText.classList.add('blinking');
+        }
 
         const card = document.createElement('div');
         card.className = 'card blue';
