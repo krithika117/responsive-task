@@ -180,7 +180,8 @@ h6 {
 }
 
 .image-1 {
-    max-height: 10rem;
+    max-width: 7rem;
+    height: 7rem;
 }
 
 @keyframes fadeInFromLeft {
