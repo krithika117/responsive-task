@@ -60,8 +60,6 @@ h6 {
     animation: 1.5s infinite floater;
 }
 
-
-
 .black:hover h4 {
     border-radius: inherit;
     opacity: 1;
@@ -179,6 +177,10 @@ h6 {
 
 .image {
     width: 90%;
+}
+
+.image-1 {
+    width: 100%;
 }
 
 @keyframes fadeInFromLeft {

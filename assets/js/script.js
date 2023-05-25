@@ -121,7 +121,7 @@ if (window.location.pathname == "/universe.html") {
 }
 if (window.location.pathname == "/team.html") {
     const apiURL =
-        `https://gateway.marvel.com/v1/public/characters?${API_HASH}`;
+        `https://gateway.marvel.com/v1/public/characters?${API_HASH}&limit=100`;
     const characterContainer = document.getElementById('character-container');
 
     fetch(apiURL)
@@ -133,7 +133,7 @@ if (window.location.pathname == "/team.html") {
                 const imageUrl = `${character.thumbnail.path}.${character.thumbnail.extension}`;
 
                 const card = document.createElement('div');
-                card.className = 'card blue d-flex col-sm-3 ms-auto';
+                card.className = 'card blue d-flex col-lg-2 col-md-3 col-sm-3 m-1';
 
                 const imageContainer = document.createElement('div');
                 imageContainer.className = 'image-container';
@@ -141,10 +141,10 @@ if (window.location.pathname == "/team.html") {
                 const image = document.createElement('img');
                 image.src = imageUrl;
                 image.alt = name;
-                image.className = 'image border-2';
+                image.className = 'image-1 border-2';
 
                 const cardBody = document.createElement('div');
-                cardBody.className = 'card-body ms-auto';
+                cardBody.className = 'card-body ms-auto p-1';
 
                 const cardTitle = document.createElement('h5');
                 cardTitle.className = 'card-title';
