@@ -1,6 +1,14 @@
 const BASE_URL = "https://krithika-marvel-api.vercel.app";
+// const BASE_URL = "http://127.0.0.1:3000"
 const API_HASH = "ts=1&apikey=2c764864c5c72c7f6bf98584d2969e45&hash=91d69e2b93b176b0c9fb00841c1f805b";
 const EMAIL_JS_KEY = "tqAWXJdq654vqEETQ";
+
+// fetch(BASE_URL + '/env-elements')
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => {
+//         console.log('Error:', error);
+//     });
 
 if (window.location.pathname == "/universe.html") {
     // const BASE_URL = "http://127.0.0.1:3000";
@@ -39,6 +47,9 @@ if (window.location.pathname == "/universe.html") {
 
             planetContainer.className = 'planet ' + selectedPlanet.toLowerCase();
             planetNameElement.textContent = data.stone ? `${selectedPlanet} ${data.stone}` : selectedPlanet;
+            planetContainer.style.boxShadow = data.boxShadow;
+            planetContainer.style.backgroundImage = `url(${BASE_URL + "/" + data.backgroundImage})`;
+            // console.log(BASE_URL + "/" + data.backgroundImage)
 
             let info = '';
             if (data.stone) {

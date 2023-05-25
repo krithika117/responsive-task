@@ -153,46 +153,6 @@ h6 {
     transition: 0.6s ease-in-out;
 }
 
-.knowhere {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #105502;
-    background: url(../images/planets/knowhere.jpg);
-}
-
-.xandar {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #7b9a7b;
-    background: url(../images/planets/xandar.jpg);
-}
-
-.asgard {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #5b80a0;
-    background: url(../images/planets/asgard.jpg);
-}
-
-.midgard {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #114189;
-    background: url(../images/planets/earth2.webp);
-}
-
-.vormir {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #a57ecb;
-    background: url(../images/planets/vormir.jpg);
-}
-
-.titan {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #57150a;
-    background: url(../images/planets/titan.jpg);
-}
-
-.morag {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #0a2557;
-    background: url(../images/planets/morag.jpg);
-}
-
-.nidavellir {
-    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em #572d0a;
-    background: url(../images/planets/nidavellir.jpg);
-}
-
 @keyframes rotate {
     to {
         background-position: -206% 0;
