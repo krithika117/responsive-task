@@ -119,7 +119,7 @@ if (window.location.pathname == "/universe.html") {
             });
     }
 }
-if (window.location.pathname == "/thanos-tracker/team.html") {
+if (window.location.pathname == "/team.html") {
     const apiURL =
         `https://gateway.marvel.com/v1/public/comics/32477/characters?${API_HASH}&limit=100`;
     const characterContainer = document.getElementById('character-container');
